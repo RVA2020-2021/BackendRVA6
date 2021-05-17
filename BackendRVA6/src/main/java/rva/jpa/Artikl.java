@@ -29,7 +29,7 @@ public class Artikl implements Serializable {
 	private String proizvodjac;
 
 	//bi-directional many-to-one association to StavkaPorudzbine
-	@OneToMany(mappedBy="artikl")
+	@OneToMany(mappedBy="artikl", cascade = {CascadeType.DETACH, CascadeType.REMOVE})
 	@JsonIgnore
 	private List<StavkaPorudzbine> stavkaPorudzbines;
 
